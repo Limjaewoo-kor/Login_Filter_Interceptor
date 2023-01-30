@@ -17,7 +17,7 @@ public class LogFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        log.info("log filter doFilter");
+        log.info("1번 필터 시작 - log filter doFilter");
 
         //ServletRequest는 HttpServletRequest의 부모이나, 기능이 적다, 그렇기에 HttpServletRequest으로 캐스트해준다.
         HttpServletRequest httpRequest = (HttpServletRequest) request;
@@ -34,7 +34,7 @@ public class LogFilter implements Filter {
         }catch (Exception e){
             throw e;
         }finally {
-            log.info("RESPONSE [{}][{}]",uuid,requestURI);
+            log.info("1번 필터 종료 - RESPONSE [{}][{}]",uuid,requestURI);
         }
 
     }
